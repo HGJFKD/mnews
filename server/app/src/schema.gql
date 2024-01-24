@@ -1,0 +1,48 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Mutation {
+  createUser(user: UserInput!): createUserResult!
+  delete(id: Float!): String!
+  deleteAll: String!
+  signin(loginUserInput: SigninUserInput!): SigninResponse!
+  signup(loginUserInput: UserInput!): createUserResult!
+  update(updateUserInput: UserInput!): UserEntity!
+}
+
+type Query {
+  findAll: [UserEntity!]!
+  findByEmail(email: String!): UserEntity!
+  findById(id: Float!): UserEntity!
+}
+
+type SigninResponse {
+  access_token: String!
+  user: UserEntity!
+}
+
+input SigninUserInput {
+  email: String!
+  password: String!
+}
+
+type UserEntity {
+  email: String!
+  firstName: String!
+  id: ID!
+  lastName: String!
+  password: String!
+  permissions: String!
+}
+
+input UserInput {
+  email: String!
+  firstName: String!
+  id: Float
+  lastName: String!
+  password: String!
+  permissions: String!
+}
+
+union createUserResult = UserEntity

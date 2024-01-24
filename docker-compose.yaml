@@ -1,0 +1,75 @@
+version: '3.9'
+services:
+  pg:
+    container_name: pg
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: mnsadmin
+      POSTGRES_PASSWORD: 8114
+      POSTGRES_DB: postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - pg:/var/lib/postgresql/data
+      - ./db:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mnsadmin"]
+      interval: 10s
+      timeout: 25s
+      retries: 3
+      
+  redis:
+    image: redis:latest
+    restart: always
+    ports:
+      - '4379:4379'
+    command: redis-server --save 20 1 --loglevel warning 
+    volumes:
+      - ./reids:/data
+
+  server: 
+    container_name: server
+    image: barlev8114idf/nestapp:1.0.0
+    build: ./server
+    environment:
+      - DB_TYPE=postgres
+      - PG_USER=mnsadmin
+      - PG_PASSWORD=8114
+      - PG_DB=postgres
+      - PG_PORT=5432
+      - PG_HOST=pg
+    depends_on:
+      pg:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    ports:
+      - '4000:4000'
+    links:
+      - pg
+      - redis
+      # - client
+    volumes:
+      - ./server/app/src:/app/src
+
+  # client:
+  #   container_name: client
+  #   build: ./client
+  #   ports:
+  #     - "3000:3000"
+  #   develop:
+  #     watch:
+  #       - action: rebuild
+  #         path: ./client/app/package.json
+  #   volumes:
+  #   - ./client/app/src:/app/src
+
+
+
+
+volumes:
+    redis:
+      driver: local
+    pg:
+      driver: local
