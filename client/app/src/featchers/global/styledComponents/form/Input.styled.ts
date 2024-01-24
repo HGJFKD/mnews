@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 type InputTypeProps = {
-    type: string;
+  type: string;
 };
 
 export const InputGruop = styled.div`
@@ -26,7 +26,7 @@ export const Input = styled.input`
     height: 40px;
     font-size: 16px;
     color: #6e0082;
-    padding: 0 5px;
+    padding: 10px;
     background: transparent;
     border: none;
     outline: none;
@@ -35,7 +35,7 @@ export const Input = styled.input`
 export const Label = styled.label<InputTypeProps>`
     position: absolute;
     top: 50%;
-    left: ${({ type }) => type === 'date' ? '30px' : '5px'};
+    left: ${({ type }) => type === 'date' ? '36px' : '5px'};
     transform: translateY(-50%);
     font-size: 16px;
     color: #6e0082;

@@ -8,7 +8,7 @@ import Input from './Input';
 import Typography from '../Typography';
 import capitalizeFirstLetter from '../../helpers/capitalizeFirstLetter';
 import FormField from '../../types/propsTypes/formField.type';
-import Select from './Select';
+import CustomSelect from './CustomSelect';
 
 interface FormComponentProps {
     formTitle: string;
@@ -31,7 +31,7 @@ const Form: React.FC<FormComponentProps> = ({ formTitle, fields, onSubmit }) => 
             {fields.map((field) => (
                 <span key={field.name}>
                     {field.type === 'select' ? (
-                        <Select options={field.options!} />
+                        <CustomSelect options={field.options!} register={{ ...register(field.name) }} />
                     ) : (
                         <Input type={field.type} title={field.label}
                             register={{ ...register(field.name) }}

@@ -28,7 +28,7 @@ export const NavLinks = styled(NavLink) <NavLinksProps>`
     }
 
     > p {
-        padding: 2px 0px
+        padding: 3% 0
     }
 `;
 

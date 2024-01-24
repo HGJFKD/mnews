@@ -1,53 +1,69 @@
 import styled from "styled-components";
-
 interface SelectGroupProps {
   isSelected: boolean
+  isOpen: boolean
 }
 
-export const SelectGroup = styled.div<SelectGroupProps>`
+export const ArrowIcon = styled.span<{ isOpen: boolean }>`
+  position: absolute;
+  top: 60%;
+  right: 5px;
+  color: ${({ isOpen }) => (isOpen ? '#e15ff9' : '#6e0082')};
+  transform: translateY(-50%) rotate(${({ isOpen }) => (isOpen ? '0deg' : '-90deg')});
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+`;
+
+export const CustomSelectContainer = styled.div<SelectGroupProps>`
   position: relative;
-  margin: 18px 0;
-  border-bottom: 1px solid #6e0082;
+  cursor: pointer;
+  width: 320px;
+  height: 40px;
+  margin: 18px 0; 
+  border-bottom: 1px solid ${({ isOpen }) => (isOpen ? "#e15ff9" : "#6e0082")};
   transition: border-bottom-color 0.5s;
-
-  &:focus-within {
-    border-bottom-color: #e15ff9;
-
-    > label {
-      top: -4px;
-      left: 5px;
-      color: #e15ff9;
-      font-size: 12px;
-    }
-  }
-
   > label {
     position: absolute;
-    top: ${({ isSelected }) => (isSelected ? "-4px" : "50%")};
+    top: ${({ isSelected, isOpen }) => (isSelected || isOpen ? "-4px" : "50%")};
     left: 5px;
     transform: translateY(-50%);
-    font-size: ${({ isSelected }) => (isSelected ? "12px" : "16px")};
-    color: ${({ isSelected }) => (isSelected ? "#e15ff9" : "#6e0082")};
+    font-size: ${({ isSelected, isOpen }) => (isSelected || isOpen ? "12px" : "16px")};
+    color: ${({ isSelected, isOpen }) => (isSelected || isOpen ? "#e15ff9" : "#6e0082")};
     pointer-events: none;
     transition: 0.5s;
+  }
+
+  ${ArrowIcon} {
+
   }
 `;
 
-export const Select = styled.select`
-    width: 320px;
-    height: 40px;
-    font-size: 16px;
-    color: #6e0082;
-    padding: 0 5px;
-    background: transparent;
-    border: none;
-    outline: none;
-`
+export const SelectedOption = styled.div`
+  padding: 10px;
+  font-size: 16px;
+  color: #6e0082;
+  cursor: pointer;
+`;
 
-export const Option = styled.option`
-    position: absolute;
-    font-size: 16px;
-    color: #6e0082;
-    pointer-events: none;
-    transition: 0.5s;
-`
+export const OptionsContainer = styled.div<{ open: boolean }>`
+  position: absolute;
+  top: 102%;
+  left: 0;
+  width: 100%;
+  z-index:99;
+  background-color: #fff;
+  border: 1px solid #e15ff9;
+  border-top: none;
+  display: ${({ open }) => (open ? "block" : "none")};
+`;
+
+export const Option = styled.div`
+  padding: 10px;
+  font-size: 16px;
+  color: #6e0082;
+  cursor: pointer;
+  &:hover {
+    background-color: #e15ff9;
+    color: #fff;
+  }
+`;

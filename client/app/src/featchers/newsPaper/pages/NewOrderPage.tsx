@@ -14,9 +14,10 @@ const NewOrderPage
             { name: "status", label: "status", type: "text" },
             {
                 name: "handleragent", label: "handler agent", type: "select", options: {
-                    selected: "select ...",
+                    selected: "select handler",
                     values:
-                        ["director",
+                        [
+                            "director",
                             'sales Agent',
                             'chief graphic artist',
                             'sub graphic designer',
