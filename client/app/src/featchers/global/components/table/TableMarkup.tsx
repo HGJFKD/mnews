@@ -1,6 +1,6 @@
 import { FC } from "react";
 import StyledTable from "../../styledComponents/table/table.style";
-import { DataTable } from "./data";
+import DataTable from "../../types/dataTable.type";
 
 const TableMarkup: FC<{ data: DataTable[], titles: string[] }> = ({ titles, data }) => (
     <StyledTable>

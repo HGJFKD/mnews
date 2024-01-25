@@ -7,21 +7,21 @@ import Typography from "./Typography";
 
 
 
-type IconAndTytleBtnProps = {
+type IconAndTitleBtnProps = {
     title: string;
     to: string;
     icon: ReactNode;
     btnprops: InputHTMLAttributes<HTMLButtonElement>
 }
 
-const IconAndTytleBtn: FC<IconAndTytleBtnProps> = ({ title, to, icon, ...btnprops }) => {
+const IconAndTitleBtn: FC<IconAndTitleBtnProps> = ({ title, to, icon, ...btnprops }) => {
     return (
         <Button {...btnprops}
             sx={{ width: "100px", marginTop: "20px", }}>
             <  NavLinks issub={"true"} to={to} >
                 <Icon>{icon}</Icon>
                 <Typography
-                    childern={title}
+                    children={title}
                 ></Typography>
             </NavLinks>
         </Button>
@@ -29,4 +29,4 @@ const IconAndTytleBtn: FC<IconAndTytleBtnProps> = ({ title, to, icon, ...btnprop
     )
 }
 
-export default IconAndTytleBtn
+export default IconAndTitleBtn

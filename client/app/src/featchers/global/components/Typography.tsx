@@ -6,20 +6,20 @@ type TypographyStyledProps = {};
 const TypographyStyled = styled.p<TypographyStyledProps>`
   padding: 2px 0px;
   min-height: 100%;
-  text-align: center
+  text-align: center;
 
 `;
 
 type TypographyProps = {
-  childern?: ReactNode;
-  componnet?: string;
+  children?: ReactNode;
+  component?: string;
   sx?: CSSProperties;
 };
 
-const Typography: FC<TypographyProps> = ({ childern, componnet, sx }) => {
+const Typography: FC<TypographyProps> = ({ children: children, component: component, sx }) => {
   return (
-    <TypographyStyled as={componnet} style={sx}>
-      {childern}
+    <TypographyStyled as={component} style={sx}>
+      {children}
     </TypographyStyled>
   );
 };

@@ -4,7 +4,7 @@ import {
 } from "react-router-dom";
 
 import HomePage from "../pages/Home";
-import Orders from "../../newsPaper/pages/orders";
+import Orders from "../../newsPaper/pages/Orders";
 import NewOrderForm from "../../newsPaper/pages/NewOrderPage";
 
 const Router = () => {
@@ -15,7 +15,7 @@ const Router = () => {
         <Route path="/dashboard/home" element={<HomePage />} />
         <Route path="/NewsPaper/pages" element={<div>/NewsPaper/pages</div>} />
         <Route path="/dashboard/orders" element={<Orders />} />
-        <Route path="/orsers/neworderform" element={<NewOrderForm />} />
+        <Route path="/orders/neworderform" element={<NewOrderForm />} />
       </Routes>
     </>
   )

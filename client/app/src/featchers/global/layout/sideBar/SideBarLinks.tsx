@@ -38,7 +38,7 @@ const SideBarLinks = ({
             onClick={toggle}
           >
             <Icon>{icon}</Icon>
-            <Typography childern={title}></Typography>
+            <Typography children={title}></Typography>
             {span && <Newest>{span}</Newest>}
           </NavLinks>
         ) : (

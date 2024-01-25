@@ -43,6 +43,10 @@ export const SelectedOption = styled.div`
   font-size: 16px;
   color: #6e0082;
   cursor: pointer;
+  border: none;
+  &:active, :focus-within, ::before, ::after, :start, ::selection, :single-button{
+    border: none;
+  }
 `;
 
 export const OptionsContainer = styled.div<{ open: boolean }>`
@@ -55,6 +59,7 @@ export const OptionsContainer = styled.div<{ open: boolean }>`
   border: 1px solid #e15ff9;
   border-top: none;
   display: ${({ open }) => (open ? "block" : "none")};
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
 `;
 
 export const Option = styled.div`

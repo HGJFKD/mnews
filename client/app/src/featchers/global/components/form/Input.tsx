@@ -14,7 +14,7 @@ interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> { }
 const Input: FC<InputProps & { labelProps?: LabelProps }> = ({ type, title, labelProps, register, ...restProps }) => {
   return (
     <InputGruop>
-      <SInput type={type} required {...restProps} {...register}/>
+      <SInput type={type} required {...restProps} {...register} />
       <Label type={type!} form="" {...labelProps}>
         {capitalizeFirstLetter(title)}
       </Label>

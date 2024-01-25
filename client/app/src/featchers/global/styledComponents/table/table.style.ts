@@ -7,15 +7,14 @@ const StyledTable = styled.table`
   border-collapse: separate; 
   border-spacing: 5px 5px;
   caption-side: bottom;
-  /* -empty-cell: show | hide; */
-  /* empty-cell is a property of table or the cells themselves
-
-  /* vertical-align: baseline | sub | super | text-top | 
+  -empty-cell: hide;
+ /* vertical-align: baseline ; */
+ padding: 20px 20px;
+  /* | sub | super | text-top | 
                 text-bottom | middle | top | bottom | 
-                <percentage> | <length> */
+                <percentage> | <length> */ 
             
-  td,
-  th {
+  td, th {
     border: none;
     padding: 5px 20px
   }
@@ -25,18 +24,21 @@ const StyledTable = styled.table`
   } */
 
   td {
-    padding: 5px 10px;
+    /* padding: 10px 10px; */
   }
 
   tbody tr:nth-of-type(odd) {
-  background-color: #efefef;
+  background-color: #fcebff;
 }
 
 tbody tr:hover {
-  background-color: lightpink;
+  background-color: #FF99CC;
+  cursor: pointer;
 }
   thead > tr {
-    background-color: #c2c2c2;
+    background-color: #ce00f4;
+    color: #fff;
+    
   }
   caption {
     font-size: 0.9em;

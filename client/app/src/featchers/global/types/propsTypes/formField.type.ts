@@ -1,14 +1,13 @@
-export interface InterfaceOption {
-    selected: string;
-    values: string[]
-}
-
-interface FormField {
+interface FormFieldBase {
     name: string;
     label: string;
     type: string;
-    options?: InterfaceOption;
+}
+export interface SelectFormField extends FormFieldBase {
+    type: "select";
+    options: string[];
 }
 
+type FormField = FormFieldBase | SelectFormField;
 
-export default FormField
+export default FormField;
