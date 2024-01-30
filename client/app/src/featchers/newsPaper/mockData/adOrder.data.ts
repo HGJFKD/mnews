@@ -2,6 +2,7 @@ import { AdObject } from "../types/adOrders.type";
 
 const adOrders: AdObject[] = [
     {
+        id: 1,
         userName: 'JohnDoe',
         adSize: 'Large',
         datePublished: '2024-01-25',
@@ -11,6 +12,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'director',
     },
     {
+        id: 2,
         userName: 'JaneSmith',
         adSize: 'Medium',
         datePublished: '2024-01-26',
@@ -20,6 +22,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'sales agent',
     },
     {
+        id: 3,
         userName: 'AliceJohnson',
         adSize: 'Small',
         datePublished: '2024-01-27',
@@ -29,6 +32,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'chief graphic artist',
     },
     {
+        id: 4,
         userName: 'BobMiller',
         adSize: 'Large',
         datePublished: '2024-01-28',
@@ -38,6 +42,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'sub graphic designer',
     },
     {
+        id: 5,
         userName: 'EvaBrown',
         adSize: 'Medium',
         datePublished: '2024-01-29',
@@ -47,6 +52,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'sales agent',
     },
     {
+        id: 6,
         userName: 'CharlieWilson',
         adSize: 'Small',
         datePublished: '2024-01-30',
@@ -56,6 +62,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'chief graphic artist',
     },
     {
+        id: 7,
         userName: 'GraceJones',
         adSize: 'Large',
         datePublished: '2024-01-31',
@@ -65,6 +72,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'sub graphic designer',
     },
     {
+        id: 8,
         userName: 'DavidClark',
         adSize: 'Medium',
         datePublished: '2024-02-01',
@@ -74,6 +82,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'director',
     },
     {
+        id: 9,
         userName: 'SophieWhite',
         adSize: 'Small',
         datePublished: '2024-02-02',
@@ -83,6 +92,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'chief graphic artist',
     },
     {
+        id: 10,
         userName: 'TomGreen',
         adSize: 'Large',
         datePublished: '2024-02-03',
@@ -92,6 +102,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'sales agent',
     },
     {
+        id: 11,
         userName: 'JohnDoe',
         adSize: 'Large',
         datePublished: '2024-01-25',
@@ -101,6 +112,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'director',
     },
     {
+        id: 12,
         userName: 'JaneSmith',
         adSize: 'Medium',
         datePublished: '2024-01-26',
@@ -110,6 +122,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'sales agent',
     },
     {
+        id: 13,
         userName: 'AliceJohnson',
         adSize: 'Small',
         datePublished: '2024-01-27',
@@ -119,6 +132,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'chief graphic artist',
     },
     {
+        id: 14,
         userName: 'BobMiller',
         adSize: 'Large',
         datePublished: '2024-01-28',
@@ -128,6 +142,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'sub graphic designer',
     },
     {
+        id: 15,
         userName: 'EvaBrown',
         adSize: 'Medium',
         datePublished: '2024-01-29',
@@ -137,6 +152,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'sales agent',
     },
     {
+        id: 16,
         userName: 'CharlieWilson',
         adSize: 'Small',
         datePublished: '2024-01-30',
@@ -146,6 +162,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'chief graphic artist',
     },
     {
+        id: 17,
         userName: 'GraceJones',
         adSize: 'Large',
         datePublished: '2024-01-31',
@@ -155,6 +172,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'sub graphic designer',
     },
     {
+        id: 18,
         userName: 'DavidClark',
         adSize: 'Medium',
         datePublished: '2024-02-01',
@@ -164,6 +182,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'director',
     },
     {
+        id: 19,
         userName: 'SophieWhite',
         adSize: 'Small',
         datePublished: '2024-02-02',
@@ -173,6 +192,7 @@ const adOrders: AdObject[] = [
         handlerAgent: 'chief graphic artist',
     },
     {
+        id: 20,
         userName: 'TomGreen',
         adSize: 'Large',
         datePublished: '2024-02-03',

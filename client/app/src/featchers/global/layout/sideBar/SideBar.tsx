@@ -10,7 +10,7 @@ import {
 import { Logo } from "../header/logo/Logo";
 import SideBarFooter from "./SideBarFooter";
 import SideBarButtons from "./SideBarLinks";
-import makeBottons from "./makeButtonsArray";
+import makeButtons from "./makeButtonsArray";
 
 import useOpen from "../../hooks/useOpen";
 import openProps from "../../types/open";
@@ -36,7 +36,7 @@ const SideBar: FC<openProps> = ({ open }) => {
     <>
       <SideBarWrappet open={open}>
         <SideBarBody>
-          <Logo open={open} issidebar={"true"}/>
+          <Logo open={open} issidebar={"true"} />
           <Scrollbars
             autoHide
             autoHideTimeout={800}
@@ -44,7 +44,7 @@ const SideBar: FC<openProps> = ({ open }) => {
             style={{ height: "calc(100vh - 180px)" }}
           >
             <UnorderList>
-              {makeBottons.map((btn, i) => (
+              {makeButtons.map((btn, i) => (
                 <SideBarButtons
                   key={i}
                   to={btn.to}

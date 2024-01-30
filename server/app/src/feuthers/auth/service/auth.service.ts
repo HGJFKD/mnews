@@ -20,8 +20,8 @@ export class AuthService {
 
     async signup(loginUserInput: UserInput): Promise<typeof createUserResult> {
         const salt = await bcrypt.genSalt();
-        const hashedPassord = await bcrypt.hash(loginUserInput.password, salt)
-        loginUserInput.password = hashedPassord
+        const hashedPassword = await bcrypt.hash(loginUserInput.password, salt)
+        loginUserInput.password = hashedPassword
         return this.userResolver.createUser(loginUserInput)
     }
 
@@ -41,7 +41,7 @@ export class AuthService {
         const access_token = await this.jwtService.sign({
             email: user.email,
             userId: user.id,
-            permissions :user.permissions
+            permissions: user.permissions
         })
         return {
             access_token,

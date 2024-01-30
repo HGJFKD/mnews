@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 
 import './index.css'
-import Router from './featchers/global/router/Router'
+import RouterDom from './featchers/global/router/RouterDom'
 
 import GlobalStyles from "./featchers/global/styledComponents/globalStyles/GlobalStyles.styled";
 import Navbar from "./featchers/global/layout/navbar/Navbar"
@@ -39,9 +39,8 @@ function App() {
           <Navbar open={open} setOpen={setOpen} />
         </AppContainer>
         <ContentContainer open={open} >
-          <Router />
+          <RouterDom />
         </ContentContainer>
-
       </BrowserRouter >
     </>
   );
