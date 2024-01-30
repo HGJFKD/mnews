@@ -4,24 +4,23 @@ import { NavLinks } from "../styledComponents/sideBar/NavLinks.styled";
 import { Icon } from "../styledComponents/globalStyles/Icon.styled";
 import Button from "./Button";
 import Typography from "./Typography";
-
-
-
-type IconAndTitleBtnProps = {
+import capitalizeFirstLetter from "../helpers/capitalizeFirstLetter";
+export interface IconAndTitleBtnProps {
     title: string;
-    to: string;
+    to?: string;
     icon: ReactNode;
-    btnprops: InputHTMLAttributes<HTMLButtonElement>
+    btnprops?: InputHTMLAttributes<HTMLButtonElement>
 }
 
 const IconAndTitleBtn: FC<IconAndTitleBtnProps> = ({ title, to, icon, ...btnprops }) => {
     return (
         <Button {...btnprops}
-            sx={{ width: "100px", marginTop: "20px", }}>
-            <  NavLinks issub={"true"} to={to} >
+            sx={{ marginTop: "10px", }}>
+            <  NavLinks issub={"true"} to={to!} >
                 <Icon>{icon}</Icon>
                 <Typography
-                    children={title}
+                    component="p"
+                    children={capitalizeFirstLetter(title)}
                 ></Typography>
             </NavLinks>
         </Button>

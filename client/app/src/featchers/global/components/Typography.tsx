@@ -5,7 +5,6 @@ type TypographyStyledProps = {};
 
 const TypographyStyled = styled.p<TypographyStyledProps>`
   padding: 2px 0px;
-  min-height: 100%;
   text-align: center;
 
 `;
@@ -16,7 +15,7 @@ type TypographyProps = {
   sx?: CSSProperties;
 };
 
-const Typography: FC<TypographyProps> = ({ children: children, component: component, sx }) => {
+const Typography: FC<TypographyProps> = ({ children, component, sx }) => {
   return (
     <TypographyStyled as={component} style={sx}>
       {children}

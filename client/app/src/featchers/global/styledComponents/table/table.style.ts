@@ -8,25 +8,10 @@ const StyledTable = styled.table`
   border-spacing: 5px 5px;
   caption-side: bottom;
   -empty-cell: hide;
- /* vertical-align: baseline ; */
- padding: 20px 20px;
-  /* | sub | super | text-top | 
-                text-bottom | middle | top | bottom | 
-                <percentage> | <length> */ 
+ vertical-align: baseline ;
+ padding: 20px 10px;
+
             
-  td, th {
-    border: none;
-    padding: 5px 20px
-  }
-  /* td,
-  th {
-    border: 1px solid;
-  } */
-
-  td {
-    /* padding: 10px 10px; */
-  }
-
   tbody tr:nth-of-type(odd) {
   background-color: #fcebff;
 }
@@ -42,9 +27,22 @@ tbody tr:hover {
   }
   caption {
     font-size: 0.9em;
-    padding: 5px;
+    padding: 4px;
     font-weight: bold;
   }
 `;
 
+export const Td = styled.td<{
+  bold?: string,
+}>`
+  border: none;
+  padding: 5px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: ${({ bold }) => (bold === 'true' ? 'bold' : 'normal')};
+`;
+export const Th = styled.th`
+  border: none;
+  padding: 5px 20px;
+`
 export default StyledTable

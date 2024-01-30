@@ -2,11 +2,11 @@
 import { IoAddCircleOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
-import Table from "../../global/components/table/Table";
-import DataTable from "../../global/types/dataTable.type";
-import adOrders from "../mockData/adOrder.data";
-import ROUTER from "../../global/router/router";
-import BtnAndTitle from "../../global/components/btnAndTitle/BtnAndTitle";
+import IconAndStyleBtn from "../../../global/components/IconAndStyleBtn";
+import Table from "../../../global/components/table/Table";
+import DataTable from "../../../global/types/dataTable.type";
+import adOrders from "../../mockData/adOrder.data";
+import ROUTER from "../../../global/router/router";
 
 const Orders = () => {
 
@@ -21,11 +21,11 @@ const Orders = () => {
   }
 
   return (
-    <div>
-      <BtnAndTitle
-        typographyTitle="orders"
+    <div data-testid="cypress-test-div">
+      <IconAndStyleBtn
         icon={<IoAddCircleOutline />}
-        title="Add new order" to={ROUTER.NewOrder}
+        btnprops={{ className: "AddNewOrderBtn" }}
+        title="Add new order" to="/orders/neworderform"
       />
       <Table
         data={OrdersData}

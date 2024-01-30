@@ -1,53 +1,52 @@
-
-import SideBarButtons from '../../types/sideBarButtons';
 import { RiDashboardFill } from "react-icons/ri";
 import { MdAccountCircle } from "react-icons/md";
-import { IoMdAnalytics } from "react-icons/io";
 import { FaCalendarAlt } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
+import { RiCustomerService2Fill } from "react-icons/ri";
 import { RiCentosFill } from "react-icons/ri";
 import { FaNewspaper } from "react-icons/fa6";
 
+import SideBarButtons from '../../types/sideBarButtons';
+import ROUTER from '../../router/router';
 
-
-const makeBottons: SideBarButtons[] = [
+const makeButtons: SideBarButtons[] = [
     {
-        to: "dashboard/home",
+        to: ROUTER.Dashboard,
         icon: <i> <RiDashboardFill /></i>,
         title: "Dashboard"
     },
     {
-        to: "dashboard/newspaper",
-        icon: <i> <FaNewspaper/> </i>,
+        to: ROUTER.NewsPaper,
+        icon: <i> <FaNewspaper /> </i>,
         title: "NewsPaper",
-        subBtn: ["Pages", "Elements", "Portofilio"]
+        subBtn: ["Pages", "Elements", "Portfolios"]
     },
     {
-        to: "dashboard/orders",
-        icon: <i> <RiCentosFill/> </i>,
+        to: ROUTER.Consumers,
+        icon: <i> <RiCustomerService2Fill /> </i>,
+        title: "Customers",
+    },
+    {
+        to: ROUTER.Orders,
+        icon: <i> <RiCentosFill /> </i>,
         title: "Orders",
     },
     {
-        to: "dashboard/analytics",
-        icon: <i> <IoMdAnalytics /></i>,
-        title: "Analytics"
-    },
-    {
-        to: "dashboard/calendar",
+        to: ROUTER.Calendar,
         icon: <i> <FaCalendarAlt /></i>,
         title: "Calendar"
     },
     {
-        to: "dashboard/profile",
+        to: ROUTER.Profile,
         icon: <i> <MdAccountCircle /></i>,
         title: "Profile",
         subBtn: ["Passwords", "Mail", "Accounts"]
     },
     {
-        to: "dashboard/contens/settings",
+        to: ROUTER.Settings,
         icon: <i> <IoMdSettings /></i>,
         title: "Settings"
     },
 ]
 
-export default makeBottons
+export default makeButtons

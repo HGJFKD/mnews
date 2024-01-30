@@ -30,6 +30,10 @@ export const Input = styled.input`
     background: transparent;
     border: none;
     outline: none;
+    ::-webkit-calendar-picker-indicator{
+      background-color:#6e0082;
+
+    }
 `
 
 export const Label = styled.label<InputTypeProps>`
