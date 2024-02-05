@@ -28,7 +28,7 @@ const OrderForm: FC<{ isNotNewOrder?: boolean }> = ({ isNotNewOrder }) => {
     // Get initial Order values from db
     useEffect(() => {
 
-        if (isNotNewOrder) {
+        if (orderId) {
             const rowData = adOrders.filter((order) => order.id === +orderId!)[0]
             if (rowData) {
                 const values = Object.values(rowData).slice(1)

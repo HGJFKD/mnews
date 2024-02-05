@@ -8,6 +8,7 @@ import Navbar from "./featchers/global/layout/navbar/Navbar"
 import { useState } from "react";
 import styled from "styled-components";
 import openProps from "./featchers/global/types/open";
+import Test from "./featchers/global/themes/translation/Test";
 
 
 const AppContainer = styled.div`
@@ -30,6 +31,7 @@ const ContentContainer = styled.div<openProps>`
 function App() {
 
   const [open, setOpen] = useState(false)
+const [loading, setLoading] = useState<boolean>(true)
 
   return (
     <>
@@ -39,6 +41,7 @@ function App() {
           <Navbar open={open} setOpen={setOpen} />
         </AppContainer>
         <ContentContainer open={open} >
+          <Test/>
           <RouterDom />
         </ContentContainer>
       </BrowserRouter >

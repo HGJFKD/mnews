@@ -1,5 +1,5 @@
 
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { SelectFormField } from "../../global/types/propsTypes/formField.type";
@@ -8,7 +8,7 @@ import objectHelpers from "../../global/helpers/objectHelpers";
 import costumerFields from "../utils/costumers/costumerFormFields";
 import customers from "../mockData/costumers.data";
 
-const CostumerForm: FC<{ isNotNewCostumer?: boolean }> = ({ isNotNewCostumer }) => {
+const CostumerForm = () => {
 
     // Get orderId param
     const { costumerId } = useParams()
@@ -27,15 +27,15 @@ const CostumerForm: FC<{ isNotNewCostumer?: boolean }> = ({ isNotNewCostumer }) 
 
     // Get initial Order values from db
     useEffect(() => {
-        console.log(costumerId);
-        if (isNotNewCostumer) {
+    
+        if (costumerId) {
             const rowData = customers.filter((customer) => customer.id === +costumerId!)[0]
             if (rowData) {
                 const values = Object.values(rowData).slice(1)
                 setInitialValues(values)
             }
         }
-    }, [isNotNewCostumer, costumerId])
+    }, [costumerId])
 
     return (
         <Form

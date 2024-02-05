@@ -12,9 +12,12 @@ export const Logo: FC<LogoWrapperProps> = ({ open, issidebar }) => {
                     <div>
                         <i><IconLogo /></i>
                     </div>
-                    <h2>Mnews</h2>
+                    <h2>Mnews
+
+                    </h2>
                 </Link>
             </LogoWrapper>
         </>
     )
 }
+

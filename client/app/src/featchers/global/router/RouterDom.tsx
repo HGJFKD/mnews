@@ -24,14 +24,10 @@ const RouterDom = () => {
         <Route path={ROUTER.Dashboard} element={<HomePage />} />
         <Route path={ROUTER.NewsPaper} element={<div>/NewsPaper/pages</div>} />
         <Route path={ROUTER.Consumers} element={<Costumers />} />
-        <Route
-          path={`${ROUTER.Consumer}:costumerId`}
-          element={<CostumerForm isNotNewCostumer={true} />} />
-        <Route path={ROUTER.NewConsumer} element={<div>customers/edit/:customerId</div>} />
+        <Route path={`${ROUTER.Consumer}:costumerId`} element={<CostumerForm/>} />
+        <Route path={ROUTER.NewConsumer} element={<CostumerForm />} />
         <Route path={ROUTER.Orders} element={<Orders />} />
-        <Route
-          path={`${ROUTER.Order}:orderId`}
-          element={<OrderForm isNotNewOrder={true} />} />
+        <Route path={`${ROUTER.Order}:orderId`} element={<OrderForm />} />
         <Route path={ROUTER.NewOrder} element={<NewOrder />} />
         <Route path={ROUTER.Calendar} element={<div>Calendar</div>} />
         <Route path={ROUTER.Settings} element={<div>Settings</div>} />

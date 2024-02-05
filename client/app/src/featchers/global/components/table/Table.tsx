@@ -4,6 +4,7 @@ import { RiDeleteBin7Fill } from "react-icons/ri";
 
 import DataTable from "../../types/dataTable.type";
 import StyledTable, { Td, Th } from "../../styledComponents/table/table.style";
+import LoadingAnimation from "../Loading";
 
 interface TableProps {
     data: DataTable[],
@@ -15,8 +16,6 @@ const Table: FC<TableProps> = ({ data, handleClick }) => {
     const isAdmin: boolean = true
 
     const [titles, setTitles] = useState<string[]>([''])
-
-
 
     useEffect(() => {
         const preparingTitles = (isAdmin: boolean) => {
@@ -32,7 +31,7 @@ const Table: FC<TableProps> = ({ data, handleClick }) => {
     const onClick = (e: any, item: any) => { handleClick(item) }
 
     return (
-        <>
+       <> 
             <StyledTable>
                 <thead>
                     <tr>
