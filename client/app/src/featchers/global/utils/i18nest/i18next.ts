@@ -10,7 +10,7 @@ i18next
     lng: "he",
     interpolation: { escapeValue: false },
     backend:{
-        loadPath: "http://localhost:8200/i18n/{{lng}}.json"
+        loadPath: `http://localhost:8200/i18n/{{lng}}.json`
     }
   });
 

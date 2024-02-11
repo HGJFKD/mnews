@@ -4,7 +4,7 @@ import "./index.css"
 
 import App from './App.tsx';
 import { I18nextProvider } from 'react-i18next';
-import i18next from './featchers/global/themes/translation/i18next.ts';
+import i18next from './featchers/global/utils/i18nest/i18next.ts';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

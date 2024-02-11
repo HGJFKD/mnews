@@ -1,10 +1,11 @@
+import { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 
-const useTransitions = (lang: string) => {
+const useTransitions = () => {
 
     const [t, i18n] = useTranslation("global")
 
-    const changeLang = i18n.changeLanguage(lang)
+    const changeLang: () => Promise<TFunction<"translation", undefined>> = i18n.changeLanguage
 
     return {
         t: t,

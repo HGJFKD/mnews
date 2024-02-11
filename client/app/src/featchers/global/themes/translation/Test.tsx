@@ -2,7 +2,7 @@ import useTransitions from './../../hooks/useTranslations'
 
 const Test = () => {
 
-    const { t, changeLang } = useTransitions()
+    const { t } = useTransitions()
     return (
         <>
             {t("message")}
